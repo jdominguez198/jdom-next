@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      dockerfile: docker/Dockerfile
+      context: '.'
+    volumes:
+      - ./:/app
+    ports:
+      - "3200:3000"
+      - "5273:5273"
+    entrypoint: tail -f /dev/null
